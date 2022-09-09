@@ -33,18 +33,33 @@
             <a class="navbar-brand" href="/">
                 <h1 id="logo" class="text-uppercase text-black brand">mother earth</h1>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             
             <!-- Navigation links-->
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                <a class="nav-item nav-link text-black active" href="#">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link text-black" href="#">About</a>
-                <a class="nav-item nav-link text-black" href="#">Account</a>
-                <a class="nav-item nav-link text-black" href="#">Contact Us</a>
-              </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarText">
+                <ul class="navbar-nav me-auto justify-content-end mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    {% endif %}
+
+                </ul>
+                <!-- <span class="navbar-text text-muted">
+                    adventures of a software developer
+                </span> -->
             </div>
         </nav>
     </header>
