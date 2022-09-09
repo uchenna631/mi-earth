@@ -110,11 +110,18 @@ body {
     color: lightgray;
 }
 
-.btn-signup {
+.btn {
+    border-radius: 5px;
+}
+
+.btn-signup, .btn-logout, .btn-register {
     background-color: #23BBBB;
     color: #fff;
 }
-
+.btn-logout:hover,
+.btn-register:active,
+.btn-logout:active,
+.btn-register:hover,
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
