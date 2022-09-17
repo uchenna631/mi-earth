@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, AddPostForm
 
 
 class PostList(generic.ListView):
@@ -10,7 +11,7 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
-    
+
 
 class PostDetail(View):
 
@@ -78,3 +79,17 @@ class PostLike(View):
             post.likes.add(request.user)
         
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+@login_required
+def add_post(request):
+    context = dict(backend_form=AddPostForm())
+    if request.method == 'POST':
+        form = AddPostForm(request.POST, request.FILES)
+        context['posted'] = form.instance
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = AddPostForm()
+    return render(request, 'add_post.html', context)
