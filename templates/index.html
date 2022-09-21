@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
+
+{% block header %} 
+<div class="container-fluid header-spacer mt-5"></div>
+{% endblock%}
+
+
 {% block content %}
 
 <div class="container-fluid">
@@ -41,6 +47,8 @@
 
             </div>
         </div>
+
+
     </div>
     {% if is_paginated %}
     <nav aria-label="Page navigation">
@@ -57,5 +65,3 @@
     {% endif %}
 </div>
 {%endblock%}
-Footer
-© 2022 GitHub, Inc.
