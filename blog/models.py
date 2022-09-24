@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
-from account.models import UserProfile
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -29,6 +28,7 @@ class Post(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
+
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)

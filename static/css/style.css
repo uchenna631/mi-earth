@@ -38,8 +38,13 @@ body {
 }
 
 .card {
-    border: none;
+    border: 1px solid #90c35d;
     background-color: transparent;
+    padding: 1rem;
+}
+
+.card-body {
+    padding: 0;
 }
 
 .image-container {
@@ -55,9 +60,9 @@ body {
 }
 
 .author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
+    font-weight: bold;
+    bottom: 0;
+    text-transform: capitalize;
 }
 
 .masthead {

@@ -13,39 +13,32 @@
 
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
-            <div class="row">
+            <div class="row row-cols-1 row-cols-md-3">
+
                 {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
+                <div class="col mb-4">
+                    <div class="card h-100">
+
+                    {% if "placeholder" in post.featured_image.url %}
+                        <img src="https://res.cloudinary.com/uc-cloudinary/image/upload/v1657032084/sample.jpg"
+                         class="card-img-top h-65" alt="placeholder_image">
+                    {% else %}
+                        <img class="card-img-top h-65" src=" {{ post.featured_image.url }}" alt="featured_image">
+                    {% endif %}
+                                                
                         <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top"
-                                    src="https://res.cloudinary.com/uc-cloudinary/image/upload/v1657032084/sample.jpg">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
-                                </div>
-                            </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
+                                <h5 class="card-title">{{ post.title }}</h5>
                                 <p class="card-text">{{ post.excerpt }}</p>
-                            </a>
-                            <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
-                                {{ post.number_of_likes }}</p>
+                                <p class="author mb-0">Author: {{ post.author }}</p>
+                            </a>                            
                         </div>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
+                
                 {% endfor %}
-
             </div>
+
         </div>
 
 
