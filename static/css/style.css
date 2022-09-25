@@ -2,9 +2,13 @@ body {
     background-color: #F9FAFC;
 }
 
-.header, .footer {
+.header {
     background-color: #fff;
     min-height: auto;
+}
+
+.footer {
+    margin-bottom: 5px;
 }
 
 .header-spacer {
@@ -133,9 +137,9 @@ body {
     color: #fff;
 }
 .btn-logout:hover,
-.btn-register:active,
+.btn-login:active,
 .btn-logout:active,
-.btn-register:hover,
+.btn-login:hover,
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
