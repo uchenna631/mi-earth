@@ -3,8 +3,10 @@ body {
 }
 
 .header, .footer {
-    background-color: #90c35d;
+    background-color: #fff;
+    min-height: auto;
 }
+
 
 .header-spacer {
     height: 60px;
@@ -12,21 +14,19 @@ body {
 
 .brand {
     font-family: Lato, sans-serif;
-    font-size: 1.4rem;
+    font-size: 150%;
     font-weight: 700;
-    color: #4A4A4F;
+    letter-spacing: 3px;
 }
 
-.red-o {
-    color: #E84610;
+.nav-text, .footer-text, .fab {
+    color: #90c35d;
 }
 
-.thin {
-    font-weight: 300;
-}
-
-.light-bg {
-    background-color: #fff;
+.dropdown-botton {
+    min-width: 180px;
+    max-width: 250px;
+    border: 1px solid #90c35d;
 }
 
 .dark-bg {
@@ -56,7 +56,7 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #23BBBB;
+    background-color: #90c35d;
 }
 
 .author {
@@ -101,12 +101,12 @@ body {
 
 .post-link {
     text-decoration: none;
-    color: #445261;
+    color: #90c35d;
 }
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #90c35d;
 }
 
 .post-title {
@@ -123,8 +123,8 @@ body {
     border-radius: 5px;
 }
 
-.btn-signup, .btn-logout, .btn-register {
-    background-color: #23BBBB;
+.btn-signup, .btn-logout, .btn-login {
+    background-color: #90c35d;
     color: #fff;
 }
 .btn-logout:hover,
@@ -133,12 +133,12 @@ body {
 .btn-register:hover,
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
+    background-color: #90c35d;
+    color: #fff;
 }
 
 .link {
-    color: #23BBBB;
+    color: #90c35d;
     text-decoration: none;
 }
 
@@ -149,14 +149,14 @@ body {
 }
 
 .btn-like {
-    color: #E84610;
+    color: #90c35d;
     border: none;
     background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
+    color: #90c35d;
     background: transparent;
     border: none;
 }
