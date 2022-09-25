@@ -33,10 +33,10 @@
 <body class="d-flex flex-column h-100 main-bg">
 
     <!-- Header -->
-    <header class="header fixed-top mb-4 border-bottom">
+    <header class="header fixed-top mb-2 border-bottom">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="/">
-                <h1 id="logo" class="text-uppercase nav-text brand px-4 py-4 m-0">miearth</h1>
+                <h1 id="logo" class="text-uppercase nav-text brand px-3 py-2 m-0">miearth</h1>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
              data-target="#navbarText" aria-controls="navbarText"
@@ -45,7 +45,7 @@
             </button>
             
             <!-- Drop down menu links-->
-            <div class="collapse navbar-collapse m-4 justify-content-end" id="navbarText">
+            <div class="collapse navbar-collapse px-3 py-2 m-0 justify-content-end" id="navbarText">
                 <ul class="navbar-nav me-auto justify-content-end mb-2 mb-lg-0">
                     
                     {% if user.is_authenticated %}
@@ -97,9 +97,9 @@
             </div>
         </div>
     </header>
-
     
-    {% block header %} 
+    {% block spacer %}
+     <!--Adds space between the header and the contents  -->
     {% endblock %}
 
 

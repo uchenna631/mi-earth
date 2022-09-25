@@ -7,9 +7,8 @@ body {
     min-height: auto;
 }
 
-
 .header-spacer {
-    height: 60px;
+    min-height: 60px;
 }
 
 .brand {
@@ -17,6 +16,10 @@ body {
     font-size: 150%;
     font-weight: 700;
     letter-spacing: 3px;
+}
+
+.navbar {
+    padding: 0;
 }
 
 .nav-text, .footer-text, .fab {
@@ -27,6 +30,8 @@ body {
     min-width: 180px;
     max-width: 250px;
     border: 1px solid #90c35d;
+    background-color: #90c35d;
+    color: #fff;
 }
 
 .dark-bg {
@@ -101,7 +106,7 @@ body {
 
 .post-link {
     text-decoration: none;
-    color: #90c35d;
+    color: #000;
 }
 
 .post-link:hover,
@@ -133,8 +138,8 @@ body {
 .btn-register:hover,
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #90c35d;
-    color: #fff;
+    background-color: #fff;
+    color: #90c35d;
 }
 
 .link {
@@ -149,14 +154,14 @@ body {
 }
 
 .btn-like {
-    color: #90c35d;
+    color: red;
     border: none;
     background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #90c35d;
+    color: #445261;
     background: transparent;
     border: none;
 }
