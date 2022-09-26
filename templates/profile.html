@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+
+{% block header %} 
+<div class="container-fluid header-spacer mb-5"></div>
+{% endblock%}
+
+
+{% block content %}
+
+<div class="container mt-5">
+   <div class="row">
+        <div class="col-4"></div>
+        <div class="col-8">
+            <div class="row">
+                <h4>Username</h4>
+            </div>
+            <div class="row">
+                <h4>Email</h4></div>
+            <div class="row">
+                <h4>twitter</h4></div>
+            <div class="row">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, 
+                    excepturi illo facilis dolore fugit quo ipsa? Quos adipisci aliquid 
+                    quaerat fuga rerum commodi ut nulla facere pariatur veritatis sapiente 
+                    repellat, sequi delectus, a odit quasi tenetur fugiat explicabo culpa
+                     eius voluptatibus esse quae ad accusantium.
+                     Odio itaque recusandae quod iste!
+                </p></div>
+        </div>
+   </div>
+   <div class="row">
+    <div class="col-4"></div>
+    <div class="col-8">
+        <a href="#" data-toggle="modal" data-target="#edit-profile">Edit Profile | </a>
+        <a href="#">Add Post |</a>
+        <a href="#">Edit Post</a>
+    </div>
+    <div class="modal fade" id="edit-profile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            <form action="">
+            {% csrf_token %}
+
+            {{ form }}
+
+              
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            </form>
+          </div>
+        </div>
+   </div>
+</div>
+{%endblock%}
