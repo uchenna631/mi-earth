@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 
-
+<!-- Space the header and the block content -->
 {% block header %} 
-<div class="container-fluid header-spacer mb-4"></div>
+<div class="header-spacer mb-4"></div>
 {% endblock%}
 
 
 {% block content %}
 
-<div class="container-fluid">
-    <div class="row">
+<div class="container-fluid h-100">
+    <div class="row mx-xl-6">
 
         <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row row-cols-1 row-cols-md-3">
+        <div class="col-12 mt-4 left">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
 
                 {% for post in post_list %}
                 <div class="col mb-4">
