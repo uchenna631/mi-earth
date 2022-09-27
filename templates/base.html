@@ -43,6 +43,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 
+                <!-- Logged in user's Navigation menu -->
                 {% if user.is_authenticated %}
                 <li class="nav-item dropdown dropleft">
                   <a class="nav-link" href="#" role="button" data-toggle="dropdown"
@@ -56,6 +57,8 @@
                     <li class="dropdown-item"><a  href="{% url 'account_logout' %}">Logout</a></li>
                 </ul>
                 </li>
+                
+                <!-- Visitors navigation menu -->
                 {% else %}
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'account_signup' %}">Signup</a>
