@@ -30,10 +30,11 @@
 
 </head>
 <body>
-     
-          <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+    <!-- </header> -->
+    <header>
+          <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container-fluid">
-            <a class="navbar-brand logo px-2" href="#">miearth</a>
+            <a class="navbar-brand logo px-2" href="/">miearth</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" 
              data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
               aria-expanded="false" aria-label="Toggle navigation">
@@ -57,10 +58,10 @@
                 </li>
                 {% else %}
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Register</a>
+                    <a class="nav-link" href="{% url 'account_signup' %}">Signup</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                 </li>
                 {% endif %}
               </ul>
@@ -82,7 +83,7 @@
                 </div>
             </div>
         </div>
-    <!-- </header> -->
+    </header>     
     
     {% block header %}
      <!--Adds space between the header and the contents  -->

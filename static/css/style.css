@@ -4,10 +4,15 @@ body {
     background-color: #F9FAFC;
 }
 
-.header {
-    background-color: #fff;
-    min-height: auto;
+.navbar, footer, footer a {
+    background-color: #518C27;
+    color: #fff;
 }
+
+.navbar a {
+    color: #000;
+}
+
 
 .logo {
     font-family: 'Ceviche One', cursive;
@@ -19,22 +24,12 @@ body {
 }
 
 .header-spacer {
-    min-height: 65px;
+    min-height: 5.5rem;
 }
 
-/* .brand {
-    font-family: Lato, sans-serif;
-    font-size: 150%;
-    font-weight: 700;
-    letter-spacing: 3px;
-} */
 
-.navbar {
-    padding: 0;
-}
-
-.nav-text, .footer-text, .fab {
-    color: #90c35d;
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
 }
 
 .dropdown-botton {
@@ -176,3 +171,12 @@ body {
     background: transparent;
     border: none;
 }
+
+/* ---------------------------- Media querries */
+@media screen and (min-width: 1300px){
+    .container-fluid {
+        max-width: 90%;
+    }
+}
+    
+
