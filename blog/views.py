@@ -9,7 +9,7 @@ from .forms import CommentForm, AddPostForm
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
-    template_name = 'index.html'
+    template_name = 'blog/post_list.html'
     paginate_by = 6
 
 
@@ -25,7 +25,7 @@ class PostDetail(View):
 
         return render(
             request,
-            "post_detail.html",
+            "blog/post_detail.html",
             {
                 "post": post,
                 "comments": comments,
@@ -57,7 +57,7 @@ class PostDetail(View):
 
         return render(
             request,
-            "post_detail.html",
+            "blog/post_detail.html",
             {
                 "post": post,
                 "comments": comments,
@@ -79,17 +79,3 @@ class PostLike(View):
             post.likes.add(request.user)
         
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-
-
-@login_required
-def add_post(request):
-    context = dict(backend_form=AddPostForm())
-    if request.method == 'POST':
-        form = AddPostForm(request.POST, request.FILES)
-        context['posted'] = form.instance
-        if form.is_valid():
-            form.save()
-            return redirect('home')
-    else:
-        form = AddPostForm()
-    return render(request, 'add_post.html', context)
