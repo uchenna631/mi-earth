@@ -6,16 +6,16 @@ class EditProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = (
-            'user',
+            'full_name',
             'email',
             'twitter',
             'profile_image',
             'bio',
          )
         widgets = {
-            'user': forms.TextInput(attrs={
+            'full_name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Enter your username'
+                'placeholder': 'Enter your full name'
                  }),
             'email': forms.TextInput(attrs={
                 'class': 'form-control',

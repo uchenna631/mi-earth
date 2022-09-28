@@ -12,16 +12,21 @@ class UserProfile(models.Model):
     and post history record keeking
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    profile_image = CloudinaryField('image', default='placeholder')    
+    full_name = models.TextField(max_length=60, blank=True)
+    profile_image = CloudinaryField('image', default='placeholder')
     bio = models.TextField(max_length=250, blank=True, null=True)
     email = models.EmailField(null=True, blank=True)
     twitter = models.CharField(max_length=30, blank=True, null=True)
 
     def __str__(self):
-        return self.user.username
+
+        """
+        Return user full name
+        """
+        return self.full_name
 
 
-@receiver(post_save, sender=User) 
+@receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
 
     """
