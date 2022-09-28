@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+<!-- Space the header and the block content -->
+{% block header %} 
+{% endblock%}
+
+
+{% block content %}
+
+<div class="container-fluid hero m-0 p-0">
+    <div class="hero-title p-3">
+        <h1> welcome to miearth!</h1>
+        <p>Miearth is a blog site dedicated to showcasing nature in it's finest</p>
+        <a class="btn btn-large" href="{% url 'blog' %}"><strong>Go to blog</strong></a>
+    </div>
+</div>
+
+{%endblock%}
