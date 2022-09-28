@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block header %} 
+<div class="container-fluid header-spacer mt-5"></div>
+{% endblock%}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col">
+            <form action="{% url 'edit_post' post.slug %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}            
+                {{ form | crispy }}            
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    
+</div>
+
+<script>
+    let name = "{{ user.id }}";
+    document.getElementById('username').value = name;
+</script>
+
+{% endblock %}
