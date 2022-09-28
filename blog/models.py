@@ -6,12 +6,16 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-
+# Adopted and modified from CI walkthrough tutorial
 class Post(models.Model):
+    """ 
+    Post model.
+    """
+
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="blog_posts")        
+        User, on_delete=models.CASCADE, related_name="blog_posts")
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
@@ -24,18 +28,21 @@ class Post(models.Model):
         ordering = ['-created_on']
 
     def __str__(self):
+        """ Return string """
         return self.title
 
     def number_of_likes(self):
+        """ Return number of likes """
         return self.likes.count()
-
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)
 
 
+# Adopted and modified from CI walkthrough tutorial
 class Comment(models.Model):
+    """ Comment model """
 
     post = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name='comments')
