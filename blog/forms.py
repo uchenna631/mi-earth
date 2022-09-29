@@ -4,12 +4,16 @@ from .models import Comment, Post
 
 
 class CommentForm(forms.ModelForm):
+    """ Comment form"""
     class Meta:
         model = Comment
         fields = ('body',)
 
 
 class AddPostForm(forms.ModelForm):
+    """
+    A form to post adding and editing posts
+    """
     class Meta:
         model = Post
         fields = (
@@ -40,3 +44,4 @@ class AddPostForm(forms.ModelForm):
                 'placeholder': 'Summary of Post Here'
                 })
         }
+        

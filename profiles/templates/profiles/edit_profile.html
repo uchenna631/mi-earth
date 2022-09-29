@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block header %}
+<div class="container header-spacer my-3"></div>
+{% endblock%}
+
+
+{% block content %}
+
+<div class="container my-5">
+    <div class="row mb-4">
+        <div class="col-7 m-auto">
+            <form action="{% url 'profile' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {{ form | crispy }}
+                
+                <div class="">
+                    <button type="submit" class="btn btn-submit">Save changes</button>
+                </div>
+            </form>
+        </div>        
+    </div>
+</div>
+
+</div>
+{%endblock%}

@@ -1,4 +1,10 @@
 {% extends 'base.html' %} 
+
+<!-- Space the header and the block content -->
+{% block header %} 
+<div class="header-spacer mb-4"></div>
+{% endblock %}
+
 {% block content %}
 
 {% load crispy_forms_tags %}
@@ -24,13 +30,12 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container mb-5">
     <!-- Post detail -->
     <div class="row">
         <div class="col card mb-4  mt-3 left top">
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
                 <p class="card-text ">
                     {{ post.content | safe }}
                 </p>
