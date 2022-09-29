@@ -18,6 +18,10 @@ a {
     color: #fff;
 }
 
+.footer {    
+    height: 5rem;
+}
+
 .navbar a {
     color: #000;
 }
@@ -78,16 +82,9 @@ a {
 .card {
     border: 1px solid #90c35d;
     background-color: transparent;
-    padding: 1rem;
 }
 
-.card-body {
-    padding: 0;
-}
 
-.image-container {
-    position: relative;
-}
 
 .image-flash {
     position: absolute;
