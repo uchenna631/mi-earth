@@ -9,21 +9,44 @@ body {
     background-color: #F9FAFC;
 }
 
-a {
-    color: #025940;
-}
+/* ----------------------------------------- Navbar */
 
-.navbar, footer, footer a {
+.navbar {
     background-color: #025940;
     color: #fff;
 }
 
-.footer {    
+.navbar a {
+    color: #000;
+}
+
+
+a {
+    color: #025940;
+}
+
+/* -------------------------------------- Footer */
+
+footer {
+    background-color: #025940;
+    color: #fff;
     height: 5rem;
 }
 
-.navbar a {
-    color: #000;
+.footer a { 
+    background-color: #025940;
+    color: #fff;  
+}
+
+
+
+@media screen and (max-width: 768px) { 
+    .footer {
+       display: block;
+    }
+    .footer p {
+        padding: 2px;
+    }
 }
 
 /* ------------------------------------=Hero page styling */
@@ -40,7 +63,7 @@ a {
     font-weight: 400;
     position: absolute;
     padding: 1.5rem;
-    bottom: 8%;
+    bottom: 10%;
     left: 8%;
     background-color:rgba(0, 0, 0, 0.7);
     color: #fff;
@@ -51,12 +74,16 @@ a {
     color: #fff;
 }
 
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 768px) {
+    .hero {
+        font-family: sans-serif;
+        justify-content: center;
+    }
     .hero-title {
         font-weight: 300;
         padding: 1rem;
-        bottom: 2%;
-        left: 1%;
+        left: 0;
+        text-align: center;
     }
 }
 
