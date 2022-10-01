@@ -2,7 +2,7 @@
 
 
 {% block header %} 
-<div class="container header-spacer my-3"></div>
+<div class="container header-spacer mb-md-5 my-3"></div>
 {% endblock%}
 
 
@@ -48,9 +48,9 @@
     
 
 
-  <div class="row">
+  <div class="row mb-md-3">
 
-    <div class="col p-4">
+    <div class="col p-4 mb-3 mb-md-5">
       {% if posts %}
 
         <h4>Your posts</h4>
@@ -59,7 +59,7 @@
         {% for post in posts %}
         <h6>{{post}}</h6>
         <p>{{ post.content|safe|truncatechars:150 }}</p>
-        <a class="btn btn-edit mr-2" href="{% url 'edit_post' post.slug %}">Edit Post</a>
+        <a class="btn btn-edit mr-1 mr-md-4" href="{% url 'edit_post' post.slug %}">Edit Post</a>
         <a class="btn btn-delete" href="{% url 'delete' post.slug %}">Delete Post</a>
         <hr>
         {% endfor %}
