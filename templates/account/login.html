@@ -1,23 +1,23 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 
-<!-- Space the header and the block content -->
-{% block header %} 
-<div class="header-spacer mb-2"></div>
-{% endblock %}
-
 {% load i18n %}
 {% load account socialaccount %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
+<!-- Space the header and the block content -->
+{% block header %} 
+<div class="header-spacer mb-3 mb-sm-4 mb-md-5"></div>
+{% endblock %}
+
 {% block content %}
 
-<div class="container">
-  <div class="row mt-5">
-    <div class="col-md-8 mt-3 offset-md-2">
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-md-8 mt-md-3 offset-md-2">
       
-      <h3>{% trans "Sign In" %}</h3>    
+      <h3 class="pt-md-2 mt-md-2">{% trans "Sign In" %}</h3>    
 
       <p>{% blocktrans %}Welcome back to Mi-Earth Blog. To leave a comment or like a post,
          please log in. If you have not created an account yet, then
@@ -34,7 +34,7 @@
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
 
-        <button class="btn btn-login right" type="submit">{% trans "Sign In" %}</button>
+        <button class="btn btn-login right mb-5" type="submit">{% trans "Sign In" %}</button>
       </form>
   
     </div>
