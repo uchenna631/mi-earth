@@ -52,7 +52,7 @@ footer {
 /* ------------------------------------ Hero page styling */
 
 .hero {
-    background: url(https://res.cloudinary.com/uc-cloudinary/image/upload/v1664380434/hero-image_ai8xw4.jpg) no-repeat center center;
+    background: url(https://github.com/uchenna631/mi-earth/blob/main/media/images/winter-wolf.jpg?raw=true) no-repeat center center;
     background-size: cover;
     position: relative;
     height: 94vh;
@@ -190,9 +190,9 @@ footer {
 }
 
 .btn-edit {
-    background-color: #90c35d;
+    background-color: #025940;
     font-weight: 300;
-    color: #000;
+    color: #fff;
 }
 
 .btn-delete {
@@ -256,7 +256,7 @@ footer {
     }
 
     .hero-title {
-        justify-content: center;
+        justify-content: center !important;
         font-size: 50%;
         text-align: center;
         align-items: center;
@@ -264,7 +264,7 @@ footer {
 
     .hero p {
         display: none;
-    }    
+    }
 }
 
 @media screen and (max-width: 540px) {
