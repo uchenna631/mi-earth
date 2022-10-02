@@ -1,12 +1,12 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Mother Earth Blog</title>
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -17,21 +17,21 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" 
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>    
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <meta name="description" content="
     A blog site dedicated to showcasing the beauty of the earth and promoting actions on climate change">
     <meta name="keywords" content="climate change, earth, green, green energy, mother earth, COP26, nature, beauty, world">
 
+    <title>Mother Earth Blog</title>
 </head>
 <body>
     <!-- </header> -->
     <header class="container-fluid mx-0" >
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top m-0">
         
-        <a class="navbar-brand logo pl-2" href="{% url 'home' %}"><i class="fas fa-globe-americas"></i> miearth</a>
+        <a class="navbar-brand logo pl-2" aria-label="Click on the logo to return to the home page" href="{% url 'home' %}"><i class="fas fa-globe-americas"></i> miearth</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" 
             data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +43,7 @@
             <!-- Logged in user's Navigation menu -->
             {% if user.is_authenticated %}
             <li class="nav-item dropdown dropleft">
-                <a class="nav-link" href="#" role="button" data-toggle="dropdown"
+                <a aria-label="User's username" class="nav-link" href="#" role="button" data-toggle="dropdown"
                 aria-expanded="false">
                 {{ user }}
                 </a>
@@ -98,13 +98,13 @@
     <footer class="footer mt-5 fixed-bottom justify-content-center">
         <p class="m-0 text-center footer-text p-1">&copy 2022 Fimber Uchenna</p>
         <p class="m-0 text-center footer-text p-1">Follow us:
-            <a href="https://www.facebook.com/Tinomaster/" target="_blank">
+            <a href="https://www.facebook.com/Tinomaster/" aria-label="Click to connect with me on facebbok" target="_blank">
                 <i class="fab fa-facebook-square ms-3"></i>
             </a>
-            <a href="https://www.linkedin.com/in/fimber-uchenna/" target="_blank">
+            <a href="https://www.linkedin.com/in/fimber-uchenna/" aria-label="Click to connect with me on linkedin" target="_blank">
                 <i class="fab fa-linkedin ms-3"></i>
             </a>
-            <a href="https://twitter.com/FimberUchenna" target="_blank">
+            <a href="https://twitter.com/FimberUchenna" aria-label="Click to connect with me on Twitter" target="_blank">
                 <i class="fab fa-twitter-square ms-3"></i>
             </a>
         </p>           
@@ -124,6 +124,7 @@
             alert.close();
         }, 2000);
     </script>
+
 </body>
 
 </html>

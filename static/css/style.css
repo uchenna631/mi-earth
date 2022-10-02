@@ -25,6 +25,14 @@ a {
     color: #025940;
 }
 
+.font-bold {
+    font-weight: bold;
+}
+
+.text-green {
+    color: #025940;
+}
+
 /* -------------------------------------- Footer */
 
 footer {
@@ -52,7 +60,7 @@ footer {
 /* ------------------------------------ Hero page styling */
 
 .hero {
-    background: url(https://github.com/uchenna631/mi-earth/blob/main/media/images/winter-wolf.jpg?raw=true) no-repeat center center;
+    background: url(https://github.com/uchenna631/mi-earth/blob/main/media/images/hero-image.jpg?raw=true) no-repeat center center;
     background-size: cover;
     position: relative;
     height: 94vh;
@@ -104,8 +112,9 @@ footer {
 }
 
 .card {
-    border: 1px solid #90c35d;
+    border: 2px solid #025940;
     background-color: transparent;
+    padding: 1px;
 }
 
 .image-flash {
@@ -146,7 +155,7 @@ footer {
     content: "";
     position: absolute;
     top: 0;
-    right: 90%;
+    right: 87%;
     height: 100%;
     width: 150%;
     background: #445261;
@@ -210,19 +219,19 @@ footer {
 .btn-login:hover,
 .btn-signup:hover,
 .btn-signup:active {
-    background-color:  #90c35d;
-    color: #000;
+    background-color:  #fff;
+    color: #025940;
 }
 
 .link {
-    color: 025940;
+    color: #025940;
     text-decoration: none;
 }
 
 .link:hover,
 .link:active {
     color: #90c35d;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .btn-like {
@@ -265,6 +274,24 @@ footer {
     .hero p {
         display: none;
     }
+
+    .btn {
+        font-size: 1rem;
+    }
+
+
+    .post-title {
+    margin-top: 10%;
+    font-weight: 400;
+    }
+
+    .masthead-text {
+        min-height: 230px;
+    }
+
+    .card-body {
+        padding: 0.85rem; 
+    }
 }
 
 @media screen and (max-width: 540px) {
@@ -282,5 +309,9 @@ footer {
 
     .hero h1 {
         display: none;
+    }
+
+    .btn {
+        font-size: 0.9rem;
     }
 }

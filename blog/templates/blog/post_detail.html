@@ -2,7 +2,7 @@
 
 <!-- Space the header and the block content -->
 {% block header %} 
-<div class="header-spacer mb-4"></div>
+<div class="header-spacer mb-md-5 mb-4"></div>
 {% endblock %}
 
 {% block content %}
@@ -85,7 +85,7 @@
     </div>
     <!-- Comment section -->
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 ">
+        <div class="col-md-7 mr-md-3 card mb-4  mt-3 ">
             <h3>Comments:</h3>
             <div class="card-body">
                 <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
@@ -106,6 +106,8 @@
                 {% endfor %}
             </div>
         </div>
+        {% if user.is_authenticated %}
+
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
                 <!-- Comment crispy form -->
@@ -121,7 +123,6 @@
 
                 {% else %}
 
-                {% if user.is_authenticated %}
 
                 <h3>Leave a comment:</h3>
                 <p>Posting as: {{ user.username }} </p>
@@ -132,11 +133,13 @@
                 </form>
 
                 {% endif %}
-                {% endif %}
 
             </div>
         </div>
+        {% endif %}
+    
     </div>
 </div>
+<div class="pb-3 mb-3 mb-md-5"></div>
 
 {% endblock content %}
