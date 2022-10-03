@@ -197,4 +197,3 @@ SUMMERNOTE_CONFIG = {
         ['view', ['fullscreen']],
     ],
 }
-
