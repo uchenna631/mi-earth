@@ -1,108 +1,223 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Miearth
+Miearth is a blog site dedicated to showcasing nature at it's finest and to promote calls to action on climate change. The site can be accessed by anyone. However, user's have to signup in order to make a post, comment on a post and like posts
 
-Welcome Fimber Uchenna Eze,
+## Table of Content
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+- [Responsiveness](#responsiveness)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+- [Site Scope](#site-scope)
+    * [user stories](#user-stories)
 
-## Gitpod Reminders
+- [Features](#features)
+    * [Navigation](#navigation)
+    * [Features left to implement](#features-left-to-implement)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+- [Database Model](#database-model)
 
-`python3 -m http.server`
+- [Wire Frame](#wire-frame)
 
-A blue button should appear to click: _Make Public_,
+- [Language, Framework, Library and Tools](#language-framework-library-and-tools)
 
-Another blue button should appear to click: _Open Browser_.
+- [Testing](#testing)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+- [Bugs](#bugs)
 
-A blue button should appear to click: _Make Public_,
+- [Deployment](#deployment)
 
-Another blue button should appear to click: _Open Browser_.
+- [Credits](#credits)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- [Acknowledgment](#acknowledgment)
 
-To log into the Heroku toolbelt CLI:
+- [Disclaimer](#disclaimer)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Responsiveness:
+The site is fully responsive across different browsers, and devices of different viewports.
+![responsive design of the website from ami.responsive.com](media/images/amiresponsive.JPG)
 
-------
+## Site Scope
+* Responsive Design: Miearth should be fully responsive across devices from screen size 280 upwards
+* Functionality: The functionality are the same across both mobile and desktop devices.
+* Features such as making a post, making a comment, and liking a post requires user to register for an account.
+* UI CRUD functionality: Registered and logged in users’ ability to create a post, read posts, update their posts and delete their posts from the user interface without accessing the the admin panel.
 
-## Release History
+### User stories
+| As a...                | I can...                                                 | So that...                                                                 |
+| :------------          |   :------------------------                              |        :--------------------------                                          |
+| As a site user         | I can view a list of posts                               |  so that I can select one to read.                                          |
+| As a site user         | I can click on a post                                    |  so that I can read the full post.                                          |
+| As a Site User         | I can register an account                                |  so that I can comment, like or dislike a post.                             |
+| As a Site User/Admin   | I can view comments on an individual post                |  so that I can read the conversation.                             |
+| As a Site Admin        | I can create draft posts                                 |  so that I can finish writing the content later.                            |
+| As a Site Admin/User   | I can create, read, update and delete posts              |  so that I can manage my post content.                                      |
+| As a Site User / Admin | I can view the number of likes and dislikes on each post |  so that I can see which is the most popular or viral.                      |
+| As a Site User  | I can view articles in pages |  so that the articles will appear in a digestible format
+| As a Site User / Admin | I can have my comments and likes update in the background |  so that my page does not refresh at every comment/like.
+| As a Site User / Admin | I can reset my login details |  so that I can regain access to my account when I forgot my login details
+| As a Site User | I can login in with my social media account |  so that I can login with a single sign on
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+[back to content](#table-of-content)
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## Features
+### Navigation:
+The navigation bar contains the site logo which is also a home button and two different views for logged in users and site visitors.
+#### Navigation menu bar for site visitors/logged out users
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+![navigation menu bar for site visitors](media/images/navbar-visitors.jpg)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+For a logged in user, the registered username will appear as a link to the far right. On click the username drops down to a tab with links to view the logged in user profile, create a post or logout of the site.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+#### Navigation menu bar for logged in users
+![navigation menu bar for logged in users](media/images/navbar.jpg)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+#### Navigation menu bar for logged in users on click
+![navigation menu bar for logged in users](media/images/navbar-dropdown-menu.jpg)
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+#### Home page
+![Home page](media/images/visitors-home-page.jpg)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+#### Blog page
+![Blog page](media/images/blog-page.JPG)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+#### Blog page without post
+![Blog page without post](media/images/blog-page-without-post.jpg)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+#### Signup page
+![Signup page](media/images/signup.jpg)
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+#### Sign in page
+![Sign in page](media/images/signin.jpg)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+#### Sign out page
+![Sign out page](media/images/logout.jpg)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+#### User profile page
+![User profile page](media/images/user-profile.jpg)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+#### User profile page without any post by the user
+![User profile page without any post by the user](media/images/user-profile-without-post.jpg)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+#### Add post page
+![Add post page](media/images/add-post.jpg)
 
-------
+#### Edit post page
+![Edit post page](media/images/edit-post2.jpg)
 
-## FAQ about the uptime script
+#### Edit profile page
+![Edit profile page](media/images/blog-page.JPG)
 
-**Why have you added this script?**
+### Features left to implement:
+* Follow Author functionality
+* Single sign on with social media accounts
+* Account password reset
+* Background update of events (comments, likes)
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+ [back to content](#table-of-content)
+## Database Model
 
-**How will this affect me?**
+Relational Database Model was used in this project
+![Data Model](media/images/database-model.JPG)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+[back to content](#table-of-content)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## Wire Frame
+Mock up site was created using Lucidchart wireframing. Individual frames can be seen [here](https://github.com/uchenna631/mi-earth/blob/main/media/images/miearth-wireframe.jpeg?raw=true)
 
-**So….?**
+[back to content](#table-of-content)
+## Language, Framework, Library and Tools
+* HTML5 [more on HTML5 ](https://en.wikipedia.org/wiki/HTML5)
+* CSS3 [more on CSS](https://en.wikipedia.org/wiki/CSS)
+* JavaScript [more on JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+* Python [Python doc](https://www.python.org/) [Read More on Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+* Bootstarp 4 [Bootstrap doc](https://getbootstrap.com/)
+* Django [Django doc](https://www.djangoproject.com/)
 
-**Can I opt out?**
+* Django-allauth [Django allauth doc](https://django-allauth.readthedocs.io/en/latest/)
+* Cloudinary for image hosting [read more on cloudinary ...](https://cloudinary.com/)
+* Crispy-form [django-crispy-form read the doc](https://django-crispy-forms.readthedocs.io/en/latest/install.html)
+* Summernote [Summernote Docs](https://summernote.org/)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+* Lucidchart [more on Lucidchart](https://www.lucidchart.com/pages/)
+* Heroku [more on Heroku](https://devcenter.heroku.com/)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+[back to content](#table-of-content)
 
-**Anything more?**
+## Testing
+The codes were tested by doing the following:
+### Manual Testing:
+1.	Entered invalid inputs and wrong inputs where inputs are requested with respect to integers and strings.
+2.	Recruited help from friends to use app and offer feedback
+3.  Lunching site on different devices and browsers to check for responsiveness and bugs.
+    * google chrom
+    * fire fox
+    * microsoft edge
+    * Operamini
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+#### W3C Validation: No Errors returned
+![CSS validation](media/images/w3c-validation.JPG)
 
----
+#### Pep8 Validation: No errors returned
+![pep8 validation](media/images/pep8-checker.JPG)
 
-Happy coding!
+#### Accessibility:
+
+Accessibility testing was conducted using light house devtools and it confirmed that the fonts and colors selected are easy to read and accecssible.
+![lighthouse validation](media/images/light-house-l.JPG)
+
+## Bugs
+* none found
+
+[back to content](#table-of-content)
+
+## Deployment
+The project was deployed to Heroku with the following steps:
+1. create a Heroku account
+1.  in the settings section reveal the config var and enter the key and value pair from the settings.py file
+DJANGO_URL, SECRET_KEY, PORT and CLOUDINARY_URL
+1.	on the Resources tab select Heroku Postgres as the database
+1. on the treminal type:
+ ```
+ python3 manage.py makemigrations
+ ```
+ and
+ ```
+ python3 manage.py migrate
+ ```
+ to migrate your database.
+1.	on the CLI create a requirements.txt file using the command:
+ ```
+ pip3 freeze -–local > requirements.txt
+ ```
+1.	Add a Procfile with the required codes in it: ```web: gunicorn storybase.wasgi```
+1.	Change Debug to False and commit repository to Github.
+1. In the deploy section select github and search for the repository name. link up the Heroku app to the github repository code.
+1. Scroll down and setup automatic deploy to allow Heroku to update app from gitpod push and click on the manual deploy option.
+1. click view to view the app.
+* The Deployed App can be viewed here [miearth](https://miplanetearth.herokuapp.com/)
+
+[back to content](#table-of-content)
+
+## Credits
+* Code Institute [link to site](https://codeinstitute.net/ie/)
+* Django Doc [read the doc](https://docs.djangoproject.com/en/4.0/)
+* Pixabay for the images used on the site [Pixabay](https://pixabay.com/)
+* Lucidchart fore wireframes [Link to lucid dashboard](https://lucid.app/documents#/dashboard)
+* Ukachukwu Samuel for support on forms
+* Wikipedia for post contents
+* Google fonts for logo
+* Adobe colors for color pallete
+
+[back to content](#table-of-content)
+
+## Acknowledgment
+* Code Institute Tutor Assistance
+* Spencer Bariball
+* Samuel Ukachukwu
+* Uzoamaka Eze, my wife, for her care and love
+
+[back to content](#table-of-content)
+
+## Disclaimer
+This site was developed for educational purposes only. _Fimber Uchenna 05/10/2022_
