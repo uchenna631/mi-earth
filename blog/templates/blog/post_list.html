@@ -14,16 +14,17 @@
         
         <!-- Blog Entries Column -->
         {% for post in post_list %}
-        <div class="col p-0 m-0">
-            <div class="card">
+        <div class="col">
+            <div class="card mb-3">
                 <!-- Card image -->
-                {% if "placeholder" in post.featured_image.url %}
-                    <img src="https://res.cloudinary.com/uc-cloudinary/image/upload/v1657032084/sample.jpg"
-                        class="card-img-top" alt="placeholder image">
-                {% else %}
-                    <img class="card-img-top" style="height: 200px; width: 100%;" src=" {{ post.featured_image.url }}" alt="featured image">
-                {% endif %}
-                                        
+                <a href="{% url 'post_detail' post.slug %}" class="post-link text-decoration-none">
+                    {% if "placeholder" in post.featured_image.url %}
+                        <img src="https://res.cloudinary.com/uc-cloudinary/image/upload/v1657032084/sample.jpg"
+                            class="card-img-top" alt="placeholder image">
+                    {% else %}
+                        <img class="card-img-top" style="height: 200px; width: 100%;" src=" {{ post.featured_image.url }}" alt="featured image">
+                    {% endif %}
+                </a>                 
                 <div class="card-body">
                     <a href="{% url 'post_detail' post.slug %}" class="post-link text-decoration-none">
                         <h5 class="card-title">{{ post.title }}</h5>
