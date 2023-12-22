@@ -58,7 +58,7 @@
         
         {% for post in posts %}
         <h6>{{post}}</h6>
-        <p>{{ post.content|safe|truncatechars:150 }}</p>
+        <p>{{ post.content|truncatechars_html:150|safe}}</p>
         <a class="btn btn-edit mr-1 mr-md-4" href="{% url 'edit_post' post.slug %}">Edit Post</a>
         <a class="btn btn-delete" href="{% url 'delete' post.slug %}">Delete Post</a>
         <hr>

@@ -30,42 +30,42 @@
     <!-- </header> -->
     <header class="container-fluid mx-0" >
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top m-0">
-        
-        <a class="navbar-brand logo pl-2" aria-label="Click on the logo to return to the home page" href="{% url 'home' %}"><i class="fas fa-globe-americas"></i> miearth</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" 
-            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-            <ul class="navbar-nav">
             
-            <!-- Logged in user's Navigation menu -->
-            {% if user.is_authenticated %}
-            <li class="nav-item dropdown dropleft">
-                <a aria-label="User's username" class="nav-link" href="#" role="button" data-toggle="dropdown"
-                aria-expanded="false">
-                {{ user }}
-                </a>
+            <a class="navbar-brand logo pl-2" aria-label="Click on the logo to return to the home page" href="{% url 'home' %}"><i class="fas fa-globe-americas"></i> miearth</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
                 
-            <ul class="dropdown-menu">
-                <li class="dropdown-item"><a  href="{% url 'profile' %}">Profile</a></li>
-                <li class="dropdown-item"><a href="{% url 'add_post' %}">Add Post</a></li>
-                <li class="dropdown-item"><a  href="{% url 'account_logout' %}">Logout</a></li>
-            </ul>
-            </li>
-            
-            <!-- Visitors navigation menu -->
-            {% else %}
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'account_signup' %}">Signup</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-            </li>
-            {% endif %}
-            </ul>
-        </div>
+                <!-- Logged in user's Navigation menu -->
+                {% if user.is_authenticated %}
+                <li class="nav-item dropdown dropleft">
+                    <a aria-label="User's username" class="nav-link" href="#" role="button" data-toggle="dropdown"
+                    aria-expanded="false">
+                    {{ user }}
+                    </a>
+                    
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a  href="{% url 'profile' %}">Profile</a></li>
+                    <li class="dropdown-item"><a href="{% url 'add_post' %}">Add Post</a></li>
+                    <li class="dropdown-item"><a  href="{% url 'account_logout' %}">Logout</a></li>
+                </ul>
+                </li>
+                
+                <!-- Visitors navigation menu -->
+                {% else %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'account_signup' %}">Signup</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                </li>
+                {% endif %}
+                </ul>
+            </div>
     
         </nav>
 

@@ -190,7 +190,7 @@ DJANGO_URL, SECRET_KEY, PORT and CLOUDINARY_URL
  ```
  pip3 freeze -–local > requirements.txt
  ```
-1.	Add a Procfile with the required codes in it: ```web: gunicorn storybase.wasgi```
+1.	Add a Procfile with the required codes in it: ```web: gunicorn miplanetearth.wasgi```
 1.	Change Debug to False and commit repository to Github.
 1. In the deploy section select github and search for the repository name. link up the Heroku app to the github repository code.
 1. Scroll down and setup automatic deploy to allow Heroku to update app from gitpod push and click on the manual deploy option.

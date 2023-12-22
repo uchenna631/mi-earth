@@ -114,7 +114,10 @@ footer {
 .card {
     border: 2px solid #025940;
     background-color: transparent;
-    padding: 1px;
+    max-width: 99%;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
 }
 
 .image-flash {
@@ -176,7 +179,7 @@ footer {
 }
 
 .post-title {
-    margin-top: 20%;
+    margin-top: 15%;
     margin-left: 5%;
 }
 
